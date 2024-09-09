@@ -1,16 +1,47 @@
 // import classes
-import Truck from "./classes/Truck.js";
-import Car from "./classes/Car.js";
-import Motorbike from "./classes/Motorbike.js";
-import Wheel from "./classes/Wheel.js";
-import Cli from "./classes/Cli.js";
-
+import Truck from "../src/classes/Truck";
+import Car from "../src/classes/Car";
+import Motorbike from "../src/classes/Motorbike";
+import Wheel from "./classes/Wheel";
+import Cli from "../src/classes/Cli";
 // create an array of vehicles
-const vehicles = [
-  Car,
-  Truck,
-  Motorbike
+const vehicleArray = [
+  Car, Truck, Motorbike
 ];
+
+// create vehicles
+class Vehicle {
+  public vehicle: string;
+  public vin: string;
+  public color: string;
+  public make: string;
+  public model: string;
+  public year: number;
+  public mileage: number;
+  public topSpeed: number;
+
+  constructor(
+    vehicle: string,
+    vin: string,
+    color: string,
+    make: string,
+    model: string,
+    year: number,
+    mileage: number,
+    topSpeed: number
+  ) {
+    this.vehicle = vehicle;
+    this.vin = vin;
+    this.color = color;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.mileage = mileage;
+    this.topSpeed = topSpeed;
+  }
+}
+
+const vehicles: Vehicle[] = [];
 
 // TODO: uncomment once trucks are implemented
 // const truck1 = new Truck(Cli.generateVin(),"red", "Ford", "F-150", 2021, 5000, 120, [], 10000);
@@ -24,7 +55,7 @@ const car1 = new Car(
   2021,
   3000,
   130,
-  []
+  [],
 );
 
 // TODO: uncomment once motorbikes are implemented
@@ -34,7 +65,7 @@ const car1 = new Car(
 // push vehicles to array
 // TODO: uncomment once trucks are implemented
 // vehicles.push(truck1);
-vehicles.push(car1);
+vehicleArray.push(car1);
 // TODO: uncomment once motorbikes are implemented
 // vehicles.push(motorbike1);
 
@@ -43,3 +74,6 @@ const cli = new Cli(vehicles);
 
 // start the cli
 cli.startCli();
+
+
+export default Vehicle;
