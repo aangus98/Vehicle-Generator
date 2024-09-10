@@ -1,6 +1,9 @@
-import Cli from './classes/Cli.ts'
+import Vehicle from "./Vehicle";
+import Cli from "./Cli"
+import Wheel from "./Wheel";
 
-class Car {
+class Car extends Vehicle {
+    //vehicle: string = "Car";
     vin: string;
     color: string;
     make: string;
@@ -8,9 +11,10 @@ class Car {
     year: number;
     mileage: number;
     topSpeed: number;
-    wheels: any;
+    wheels: any[]; 
 
-    constructor(vin: string, color: string, make: string, model: string, year: number, mileage: number, topSpeed: number, wheels: any) {
+    constructor(vin: string, color: string, make: string, model: string, year: number, mileage: number, topSpeed: number, wheels: any[]) {
+        super();
         this.vin = vin
         this.color = color
         this.make = make
@@ -18,7 +22,7 @@ class Car {
         this.year = year
         this.mileage = mileage
         this.topSpeed = topSpeed
-        this.wheels = wheels
+        this.wheels = wheels 
     }
 }
 
